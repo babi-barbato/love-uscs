@@ -37,15 +37,20 @@ class Boneco(pygame.sprite.Sprite):
         self.vel_y = 0  # Velocidade inicial no eixo Y
         self.gravidade = 1.3  # Ajuste a gravidade conforme necessário
         
+        self.voando  = False
         self.andando = False
         self.andandoRe = False
         self.posicao_x = 40
+        self.posicao_y = 200
 
     def re(self):
         self.andandoRe = True
 
     def andar(self):
         self.andando = True
+
+    def voar(self):
+        self.voando = True
 
     def update(self):
         # Atualiza a posição vertical do boneco com base na gravidade
@@ -61,6 +66,8 @@ class Boneco(pygame.sprite.Sprite):
         elif(self.posicao_x <= -80):
             self.posicao_x = LARGURA
             # self.tudo = 0
+
+        
 
         #Andando para frente
         if(self.andando):

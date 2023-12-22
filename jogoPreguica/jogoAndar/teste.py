@@ -21,7 +21,7 @@ nuvem = Nuvem()
 todos_sprites = pygame.sprite.Group()
 todos_sprites.add(boneco)
 
-for i in range(1):
+for i in range(2):
     nuvem = Nuvem()
     todos_sprites.add(nuvem)
 
@@ -49,12 +49,12 @@ while True:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_d]:
         boneco.andar()
-        nuvem.velocidade = 6
+        nuvem.velocidade = 2
     elif keys[pygame.K_a]:
         boneco.re()
         nuvem.velocidade = 1
     else:
-        nuvem.velocidade = 3
+        nuvem.velocidade = 2
 
     # Atualizações
     todos_sprites.update()
